@@ -1,0 +1,32 @@
+/*
+    Author: Adolfo Gonzalez
+    Date:   1/15/2019
+    File:   styles.css
+
+    This is the Dating Site css style file.
+*/
+
+/* Dating Site Styles */
+html{
+    width: 100%;
+    text-decoration: none;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    width:100%;
+}
+
+header{
+    margin: 0;
+    background: lightgrey;
+    padding: 5px;
+}
+
+#main{
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+}
