@@ -1,0 +1,4 @@
+<?php
+//validName()
+//validAge()
+//validPhone()
