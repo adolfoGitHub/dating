@@ -21,7 +21,7 @@ $f3->set('DEBUG', 3);
 
 //define a default route
 $f3->route('GET /', function(){
-    $view = new View();
+    $view = new view();
     echo $view->render('views/home.html');
 });
 
