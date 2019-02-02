@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!--
     Author: Adolfo Gonzalez
     Date:   1/15/2019
@@ -6,10 +5,12 @@
 
     This is the Dating Site Main Page.
 -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dating Assignment</title>
+    <title>Dating Sitet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -46,9 +47,11 @@
             <hr>
             <!-- Button -->
             <div class="container text-center">
-                <button type="button" class="btn btn-primary btn-lg">
-                    Create a Profile!
-                </button>
+                <form method="post" action="views/personal_information.html" class="horizontal">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        Create a Profile!
+                    </button>
+                </form>
             </div>
         </div>
         <!-- image column -->
