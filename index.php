@@ -4,25 +4,33 @@
     Date:   1/15/2019
     File:   index.php
 
-    This is the Dating Site Main Page.
+    This is the Dating Site Control Page.
  */
-//turn on error reporting
-ini_set('display_errors', 1);
+
+//php error reporting
 error_reporting(E_ALL);
+ini_set('display_errors', 3);
 
 //require autoload
-require_once('vendor/autoload.php');
+require_once'vendor/autoload.php';
+session_start();
 
-//create an instance of the BASE CLASS
+//instance of the BASE CLASS
 $f3 = Base::instance();
 
-//turn on fat-free error reporting
+//fat-free error reporting
 $f3->set('DEBUG', 3);
 
-//define a default route
-$f3->route('GET /', function(){
-    $view = new view();
-    echo $view->render('views/home.html');
+//default route
+$f3->route('GET|POST /', function () {
+    $template = new Template();
+    echo $template->render('views/home.html');
+});
+
+//personal info route
+$f3->route('GET|POST /personal_information', function() {
+    $template = new Template();
+    echo $template->render('views/personal_information.html');
 });
 
 //run fat free framework
