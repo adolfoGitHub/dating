@@ -8,8 +8,9 @@
  */
 
 //php error reporting
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
-ini_set('display_errors', 3);
+
 
 //require autoload
 require_once'vendor/autoload.php';
@@ -38,7 +39,6 @@ $f3->route('GET|POST /profile', function() {
     $template = new Template();
     echo $template->render('views/profile.html');
 });
-
 
 //interests route
 $f3->route('GET|POST /interests', function() {

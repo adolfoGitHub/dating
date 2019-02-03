@@ -6,35 +6,35 @@
     This is the Dating Site css style file.
 */
 
+
 /* Dating Site Styles */
-html{
+
+html {
     width: 100%;
     text-decoration: none;
     margin: 0;
 }
 
-body{
-
+body {
     margin: 0;
-    width:100%;
+    width: 100%;
 }
 
-header{
+header {
     margin: 0;
     background: lightgrey;
     padding: 5px;
 }
 
-#main{
+#main {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding: 2%;
 }
 
-#note{
+#note {
     margin: 5%;
     background: lightgrey;
     padding: 2%;
-
 }

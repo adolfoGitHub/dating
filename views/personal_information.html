@@ -6,75 +6,75 @@
     Personal Info page for Dating Website.
 -->
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!--CSS Styles-->
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Dating Site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
 <div class="container-fluid">
-    <header><h5>My Dating Website</h5></header><!--this will be replaced with a nav bar -->
+    <header>
+        <h4>My Dating Website</h4>
+    </header>
+    <!--this will be replaced with a nav bar -->
     <br/>
 </div>
-<!--Personal Info-->
-<div class="container rounded border" id="main">
-    <br/>
-    <h1>Personal Information</h1>
-    <hr>
-    <form action="profile.html" method="post" class="form-horizontal">
-        <div class="row">
-
-
-            <div class="col-md-9 text-left">
-                <label class="font-weight-bold">First Name</label><br/>
-                <input type="text" name="fName" id="fName" class="form-control"><br/>
-                <label class="font-weight-bold">Last Name</label><br/>
-                <input type="text" name="lName" id="lName" class="form-control"><br/>
-                <label class="font-weight-bold">Age</label><br>
-                <input type="number" name="age" id="age" class="form-control"><br/>
-                <label class="font-weight-bold">Gender</label><br/>
-                <input type="radio" name="gender" value="male">&nbsp;Male&nbsp;
-                <input type="radio" name="gender" value="female">&nbsp; Female <br/><br/>
-                <label class="font-weight-bold">Phone Number</label><br/>
-                <input type="tel" name="phone" id="phone" class="form-control"><br/>
-            </div>
-            <!--Disclaimer-->
-            <div class="col-md-3 text-center">
-                <br/>
-                <div class="container rounded border m-3" id="note">
-                    <p class="p-2"><span class="font-weight-bold ">Note:</span> All information entered is protected by
-                        our privacy
-                        policy. Profile information
-                        can only be viewed by others with your permission.</p>
-                </div>
-                <br/>
-                <!--Button Next-->
-
+        <!--Personal Info-->
+        <div class="container rounded border" id="main">
+            <br/>
+            <h1>Personal Information</h1>
+            <hr>
+            <form action="profile.html" method="post" class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <label class="font-weight-bold">First Name</label><br/>
+                            <input type="text" name="fName" id="fName" class="form-control"><br/>
+                        <label class="font-weight-bold">Last Name</label><br/>
+                            <input type="text" name="lName" id="lName" class="form-control"><br/>
+                        <label class="font-weight-bold">Age</label><br>
+                            <input type="number" name="age" id="age" class="form-control"><br/>
+                        <label class="font-weight-bold">Gender</label><br/>
+                            <input type="radio" name="gender" value="male">&nbsp;Male&nbsp;
+                        <input type="radio" name="gender" value="female">&nbsp; Female <br/><br/>
+                        <label class="font-weight-bold">Phone Number</label><br/>
+                            <input type="tel" name="phone" id="phone" class="form-control"><br/>
+                    </div>
+                    <!--Disclaimer-->
+                    <div class="col-md-3 text-center">
+                        <br/>
+                        <div class="container rounded border m-3" id="note">
+                            <p class="p-2"><span class="font-weight-bold ">Note:</span> All information entered is protected by
+                                our privacy
+                                policy. Profile information
+                                can only be viewed by others with your permission.</p>
+                        </div>
+                        <br/>
+                    </div>
+                </div>            <!--Button Next-->
                 <div class="text-right">
                     <div class="align-bottom">
                         <button type="submit" class="btn btn-primary">Next></button>
                     </div>
                 </div>
-
-            </div>
+            </form>
         </div>
-    </form>
-
-</div>
-
-</div>
-
-<!--JavaScript-->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script src="../bootstrap/jquery.slim.min.js"></script>
-<script src="../bootstrap/popper.min.js"></script>
-<script src="../bootstrap/bootstrap.min.js"></script>
-
-
+        </div>
+<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 </body>
 </html>
