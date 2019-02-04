@@ -31,10 +31,16 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding: 2%;
+    border: 1px solid lightgrey;
 }
 
 #note {
     margin: 5%;
     background: lightgrey;
     padding: 2%;
+}
+
+#infoTable {
+    border: 1px solid lightgrey;
+    border-radius: 10%;
 }

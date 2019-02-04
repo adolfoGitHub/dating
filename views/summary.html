@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -27,7 +27,57 @@
     <br/>
 </div>
 
+<div class="container-fluid rounded border" id="main">
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table" id="infoTable">
+                <tr>
+                    <td>Name: {{ @SESSION.fName }} {{ @SESSION.lName }}</td>
+                </tr>
+                <tr>
+                    <td>Gender: {{ @SESSION.gender }}</td>
+                </tr>
 
+                <tr>
+                    <td>Age: {{ @SESSION.age }}</td>
+                </tr>
+
+                <tr>
+                    <td>Phone: {{ @SESSION.phone }}</td>
+                </tr>
+
+                <tr>
+                    <td>Email: {{ @SESSION.email }}</td>
+                </tr>
+
+                <tr>
+                    <td>State: {{ @SESSION.state }}</td>
+                </tr>
+
+                <tr>
+                    <td>Seeking: {{ @SESSION.seeking }}</td>
+                </tr>
+
+                <tr>
+                    <td>Interests: {{ @SESSION.outdoor }} {{ @SESSION.indoor }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 text-center">
+            <img src="../images/person_avatar.png" alt="profile of a person" class="img-fluid rounded border"/>
+            <h4 class="text-left pt-3 pl-4">Biography</h4>
+            <p>{{ @SESSION.bio }}</p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="container text-center p-4">
+            <a class="button btn-primary btn-lg" href="">
+                Contact Me!
+            </a>
+        </div>
+    </div>
+</div>
 
 <!--Bootstrap https://v4-alpha.getbootstrap.com/-->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
