@@ -32,19 +32,27 @@
         <div class="row">
             <div class="col-md-9 text-left">
                 <label class="font-weight-bold">First Name</label><br/>
-                <input type="text" name="first" id="first" class="form-control" value="{{@SESSION.first}}"><br/>
+                <input type="text" name="first" id="first" class="form-control" value="{{@POST['first']}}"><br/>
+                <check if="{{isset(@error['first'])}}"><p>{{@error['first']}}</p></check>
                 <label class="font-weight-bold">Last Name</label><br/>
-                <input type="text" name="last" id="last" class="form-control" value="{{@SESSION.last}}"><br/>
+                <input type="text" name="last" id="last" class="form-control" value="{{@last}}"><br/>
+                <check if="{{isset(@error['last'])}}"><p>{{@error['last']}}</p></check>
                 <label class="font-weight-bold">Age</label><br>
-                <input type="number" name="age" id="age" class="form-control" value="{{@SESSION.age}}"><br/>
+                <input type="number" name="age" id="age" class="form-control" value="{{@age}}"><br/>
+                <check if="{{isset(@error['age'])}}"><p>{{@error['age']}}</p></check>
                 <label class="font-weight-bold">Gender</label><br/>
-                <input type="radio" name="gender" value="male" value="{{@SESSION.male}}">&nbsp;Male&nbsp;
-                <input type="radio" name="gender" value="female" value="{{@SESSION.female}}">&nbsp; Female <br/><br/>
+                <input type="radio" name="gender" value="male" value="male" checked>
+                <check if="{{@gender}} == male"></check>&nbsp;Male&nbsp;
+                <input type="radio" name="gender" value="female" value="female">
+                <check if="{{gender}} == Female"></check>&nbsp; Female <br/><br/>
+                <check if="{{isset(@error['gender'])}}"><p>{{@error['gender']}}</p></check>
                 <label class="font-weight-bold">Phone Number</label><br/>
-                <input type="tel" name="phone" id="phone" class="form-control" value="{{@SESSION.phone}}"><br/>
+                <input type="tel" name="phone" id="phone" class="form-control" value="{{@phone}}"><br/>
+                <check if="{{isset(@error['phone'])}}"><p>{{@error['phone']}}</p></check>
                 <div>
                     <span class="font-weight-bold">Premium Membership</span><br/>
-                    <input type="checkbox" name="membership" value="{{@SESSION.membership}}">&nbsp;&nbsp;Sign me up for a Premium Account!</br>
+                    <input type="checkbox" name="membership" value="{{@membership}}">&nbsp;&nbsp;Sign me up for
+                    a Premium Account!</br>
                 </div>
             </div>
             <!--Disclaimer-->

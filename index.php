@@ -6,15 +6,12 @@
 
     This is the Dating Site Control Page.
 */
-
 //php error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 //require autoload
 require_once('vendor/autoload.php');
-//validation file
-require_once('model/validation.php');
 
 //sessions
 session_start();
@@ -25,6 +22,13 @@ $f3 = Base::instance();
 //fat-free error reporting
 $f3->set('DEBUG', 3);
 
+//validation file
+require_once('model/validation.php');
+
+//arrays for interests
+$f3->set('indoor', array('tv', 'puzzles', 'movies', 'reading', 'cooking', 'cards', 'board', 'video'));
+$f3->set('outdoor', array('hiking', 'walking', 'biking', 'climbing', 'swimming', 'collecting'));
+
 //default route
 $f3->route('GET|POST /', function () {
     $template = new Template();
@@ -33,32 +37,37 @@ $f3->route('GET|POST /', function () {
 
 //personal info route
 $f3->route('GET|POST /personal_information', function ($f3) {
+
     //session array
     $_SESSION = array();
-    if (isset($POST['first'])) {
-        $first = $_POST['first'];
-        if (validName($first)) {
-            $_SESSION['first'] = $first;
-        } else {
-            $f3->set("error['first']", 'First Name is required.');
+        if (isset($POST['first'])) {
+            $first = $_POST['first'];
+            if (validName($first)) {
+                $_SESSION['first'] = $first;
+            } else {
+                $f3->set("error['first']", 'First Name is required.');
+
+            }
         }
-    }
-    if (isset($POST['last'])) {
-        $last = $_POST['last'];
-        if (validName($last)) {
-            $_SESSION['last'] = $last;
-        } else {
-            $f3->set("error['last']", 'Last Name is required.');
+        if (isset($POST['last'])) {
+            $last = $_POST['last'];
+            if (validName($last)) {
+                $_SESSION['last'] = $last;
+            } else {
+                $f3->set("error['last']", 'Last Name is required.');
+
+            }
         }
-    }
-    if (isset($POST['age'])) {
-        $age = $_POST['age'];
-        if (validAge($age)) {
-            $_SESSION['age'] = $age;
-        } else {
-            $f3->set("error['age']", 'Age is required.');
+
+        if (isset($POST['age'])) {
+            $age = $_POST['age'];
+            if (validAge($age)) {
+                $_SESSION['age'] = $age;
+            } else {
+                $f3->set("error['age']", 'Age is required.');
+            }
         }
-    }
+
     if (isset($_POST['gender'])) {
         $gender = $_POST['gender'];
         $_SESSION['gender'] = $gender;
@@ -129,9 +138,6 @@ $f3->route('GET|POST /profile', function ($f3) {
     echo $template->render('views/profile.html');
 });
 
-//array variables
-$f3->set('indoor', array('tv', 'puzzles', 'movies', 'reading', 'cooking', 'cards', 'board', 'video'));
-$f3->set('outdoor', array('hiking', 'walking', 'biking', 'climbing', 'swimming', 'collecting'));
 
 //interests validation
 $f3->route('GET|POST /interests', function ($f3) {
@@ -143,7 +149,7 @@ $f3->route('GET|POST /interests', function ($f3) {
         $indoor = $_POST['indoor'];
         foreach ($indoor as $activity) {
             if (validIndoor($activity)) {
-                $_SESSION['indoor'][] = $activity;
+                $_SESSION['indoor'] = $activity;
             } else {
                 $f3->set("error['indoor']", 'Invalid indoor interests.');
             }
@@ -153,7 +159,7 @@ $f3->route('GET|POST /interests', function ($f3) {
         $outdoor = $_POST['outdoor'];
         foreach ($outdoor as $activity) {
             if (validOutdoor($activity)) {
-                $_SESSION['outdoor'][] = $activity;
+                $_SESSION['outdoor'] = $activity;
             } else {
                 $f3->set("error['outdoor']", 'Invalid outdoor interests.');
             }
@@ -173,7 +179,7 @@ $f3->route('GET|POST /interests', function ($f3) {
 });
 
 //display summary route
-$f3->route('GET|POST /summary', function ($f3) {
+$f3->route('GET|POST /summary', function () {
 
     $template = new Template();
     echo $template->render('views/summary.html');
