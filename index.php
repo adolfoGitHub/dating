@@ -12,8 +12,7 @@ error_reporting(E_ALL);
 
 //require autoload
 require_once 'vendor/autoload.php';
-require 'classes/member.php';
-require 'classes/premiumMember.php';
+require_once 'model/validation.php';
 
 //sessions
 session_start();
@@ -23,9 +22,6 @@ $f3 = Base::instance();
 
 //fat-free error reporting
 $f3->set('DEBUG', 3);
-
-//validation file
-require_once 'model/validation.php';
 
 //arrays for interests
 $f3->set('indoor', array('tv', 'puzzles', 'movies', 'reading', 'cooking', 'cards', 'board', 'video'));
@@ -91,7 +87,7 @@ $f3->route('GET|POST /personal', function ($f3) {
         $f3->reroute('/profile');
     }
     $template = new Template();
-    echo $template->render('views/personal.html');
+    echo $template->render('views/info.html');
 });
 
 //summary route
