@@ -1,13 +1,15 @@
 {
-    "name": "agonzale/328/dating",
-    "authors": [
+      "name": "agonzale/328/dating",
+      "authors": [
       {
         "name": "Adolfo Gonzalez",
         "email": "agonzalez15@mail.greenriver.edu"
       }
-    ],
-  "require": {
-    "bcosca/fatfree-core": "dev-master"
-  }
-
+      ],
+      "require": {
+      "bcosca/fatfree-core": "dev-master"
+      },
+      "autoload": {
+      "classmap": ["classes/"]
+      }
 }

@@ -35,6 +35,7 @@ header {
 }
 
 #note {
+    border: 1px solid lightgrey;
     margin: 5%;
     background: lightgrey;
     padding: 2%;

@@ -37,8 +37,6 @@ function validAge($age)
     }
     return false;
 }
-
-
 /**
  * tThis function checks for a valid phone number.
  * @param $phone integer variable
@@ -51,8 +49,6 @@ function validPhone($phone)
     }
     return false;
 }
-
-
 /**
  * Get outdoor activities from array.
  * @param string $activity
@@ -63,7 +59,6 @@ function validOutdoors($activity)
     global $f3;
     return in_array($activity, $f3->get('outdoors'));
 }
-
 /**
  * Get indoor activities from array.
  * @param string $activity
