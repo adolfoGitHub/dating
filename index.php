@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 //require autoload
 require_once 'vendor/autoload.php';
 require 'classes/member.php';
-require 'classes/PremiumMember.php';
+require 'classes/premiumMember.php';
 
 //sessions
 session_start();
@@ -38,7 +38,7 @@ $f3->route('GET|POST /', function () {
 });
 
 //personal info route
-$f3->route('GET|POST /personal_information', function ($f3) {
+$f3->route('GET|POST /personal', function ($f3) {
 
     //session array
     $_SESSION = array();
@@ -91,7 +91,7 @@ $f3->route('GET|POST /personal_information', function ($f3) {
         $f3->reroute('/profile');
     }
     $template = new Template();
-    echo $template->render('views/personal_information.html');
+    echo $template->render('views/personal.html');
 });
 
 //summary route
