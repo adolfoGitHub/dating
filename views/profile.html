@@ -15,31 +15,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!--CSS Styles-->
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <link href="../styles/styles.css" rel="stylesheet">
     <title>Dating Site</title>
 </head>
 <body>
-<div class="container-fluid">
-    <header>
-        <h4>My Dating Website</h4>
-    </header>
-    <!--this will be replaced with a nav bar -->
-    <br/>
-</div>
+<header>
+    <h4>My Dating Website</h4>
+</header>
+<br/>
 <!--Profile-->
 <div class="container rounded border" id="main">
     <br/>
     <h1>Profile</h1>
     <hr>
-    <form action="interests.html" method="post" class="form-horizontal">
+    <form action="#" method="post" class="form-horizontal">
         <div class="row">
             <div class="col-sm-6">
                 <label class="font-weight-bold">Email</label>
                 <br/>
-                <input type="email" name="email" id="email" class="form-control"><br/>
-
+                <input type="text" name="email" id="email" class="form-control" value="{{@SESSION.email}}"><br/>
                 <label class="font-weight-bold">State</label><br/>
-                <select class="form-control" name="state" id="state">
+                <select class="form-control" name="state" id="state" value="{{@SESSION.state}}">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -94,17 +90,16 @@
                 </select>
                 <br/>
                 <label class="font-weight-bold">Seeking</label><br/>
-                <input type="radio" name="seeking" value="male">&nbsp;Male&nbsp;&nbsp;
-                <input type="radio" name="seeking" value="female">&nbsp;Female&nbsp;<br/>
+                <input type="radio" name="seeking" id="male" value="{{@SESSION.male}}" checked>&nbsp;Male&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="seeking" id="female" value="{{@SESSION.female}}">&nbsp;Female&nbsp;<br/>
             </div>
-
             <div class="col-sm-6">
                 <label class="font-weight-bold">Biography</label>
                 <div class="container rounded border">
-                <textarea class="rounded border"name="bio" rows="5" cols="60"></textarea><br/>
+                    <textarea class="rounded border" name="bio" rows="5" cols="60" value="{{@SESSION.bio}}"></textarea><br/>
                 </div>
             </div>
-            </div>
+        </div>
         <div class="text-right">
             <button type="submit" class="btn btn-primary btn-lg">Next></button>
         </div>
