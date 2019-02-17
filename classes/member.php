@@ -22,17 +22,13 @@ class Member
     private $_bio;
 
     #constructor
-    public function __construct($first, $last, $age, $gender, $phone, $email = "", $state = "", $seeking = "", $bio = "")
+    public function __construct($first, $last, $age, $gender, $phone)
     {
         $this->_first = $first;
         $this->_last = $last;
         $this->_age = $age;
         $this->_gender = $gender;
         $this->_phone = $phone;
-        $this->_email = $email;
-        $this->_state = $state;
-        $this->_seeking = $seeking;
-        $this->_bio = $bio;
     }
 
     #getters and setters

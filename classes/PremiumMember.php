@@ -8,19 +8,16 @@
  * File: dating/classes/PremiumMember.php
  */
 
-
 class PremiumMember extends Member
 {
     #fields
     private $_indoorInterests;
     private $_outdoorInterests;
 
-    public function __construct($first, $last, $age, $gender, $phone, $email = "", $state = "", $seeking = "", $bio = "",$inDoorInterests = "", $outDoorInterests = "")
+    public function __construct($first, $last, $age, $gender, $phone)
     {
         //set parent constructor values
-        parent::__construct($first, $last, $age, $gender, $phone, $email, $state, $seeking, $bio);
-        $this->_inDoorInterests = $inDoorInterests;
-        $this->_outDoorInterests = $outDoorInterests;
+        parent::__construct($first, $last, $age, $gender, $phone);
     }
 
     #Getters and Setters
@@ -29,7 +26,7 @@ class PremiumMember extends Member
         return $this->_indoorInterests;
     }
 
-    public function setIndoorInterests($indoorInterests): void
+    public function setIndoorInterests($indoorInterests)
     {
         $this->_indoorInterests = $indoorInterests;
     }
@@ -39,7 +36,7 @@ class PremiumMember extends Member
         return $this->_outdoorInterests;
     }
 
-    public function setOutdoorInterests($outdoorInterests): void
+    public function setOutdoorInterests($outdoorInterests)
     {
         $this->_outdoorInterests = $outdoorInterests;
     }
@@ -49,7 +46,7 @@ class PremiumMember extends Member
         return parent::getFirst();
     }
 
-    public function setFirst($first): void
+    public function setFirst($first)
     {
         parent:: setFirst($first);
     }
@@ -59,7 +56,7 @@ class PremiumMember extends Member
         return parent::getLast();
     }
 
-    public function setLast($last): void
+    public function setLast($last)
     {
         parent::setLast($last);
     }
@@ -69,17 +66,17 @@ class PremiumMember extends Member
         return parent::getAge();
     }
 
-    public function setAge($age): void
+    public function setAge($age)
     {
         parent::setAge($age);
     }
 
     public function getGender()
     {
-        rparent::getGender();
+        parent::getGender();
     }
 
-    public function setGender($gender): void
+    public function setGender($gender)
     {
         parent::setGender($gender);
     }
@@ -89,7 +86,7 @@ class PremiumMember extends Member
         return parent::getPhone();
     }
 
-    public function setPhone($phone): void
+    public function setPhone($phone)
     {
         parent::setPhone($phone);
     }
@@ -99,7 +96,7 @@ class PremiumMember extends Member
         return parent::getEmail();
     }
 
-    public function setEmail($email): void
+    public function setEmail($email)
     {
         parent::setEmail($email);
     }
@@ -109,7 +106,7 @@ class PremiumMember extends Member
         return parent::getState();
     }
 
-    public function setState($state): void
+    public function setState($state)
     {
         parent::setState($state);
     }
@@ -119,7 +116,7 @@ class PremiumMember extends Member
         return parent::getSeeking();
     }
 
-    public function setSeeking($seeking): void
+    public function setSeeking($seeking)
     {
         parent::setSeeking($seeking);
     }
@@ -129,7 +126,7 @@ class PremiumMember extends Member
         return parent::getBio();
     }
 
-    public function setBio($bio): void
+    public function setBio($bio)
     {
         parent::setBio($bio);
     }

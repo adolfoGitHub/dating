@@ -11,7 +11,9 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 //require autoload
-require_once('vendor/autoload.php');
+require_once 'vendor/autoload.php';
+require 'classes/member.php';
+require 'classes/PremiumMember.php';
 
 //sessions
 session_start();
@@ -23,7 +25,7 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //validation file
-require_once('model/validation.php');
+require_once 'model/validation.php';
 
 //arrays for interests
 $f3->set('indoor', array('tv', 'puzzles', 'movies', 'reading', 'cooking', 'cards', 'board', 'video'));
@@ -40,34 +42,32 @@ $f3->route('GET|POST /personal_information', function ($f3) {
 
     //session array
     $_SESSION = array();
-        if (isset($POST['first'])) {
-            $first = $_POST['first'];
-            if (validName($first)) {
-                $_SESSION['first'] = $first;
-            } else {
-                $f3->set("error['first']", 'First Name is required.');
+    if (isset($POST['first'])) {
+        $first = $_POST['first'];
+        if (validName($first)) {
+            $_SESSION['first'] = $first;
+        } else {
+            $f3->set("error['first']", 'First Name is required.');
 
-            }
         }
-        if (isset($POST['last'])) {
-            $last = $_POST['last'];
-            if (validName($last)) {
-                $_SESSION['last'] = $last;
-            } else {
-                $f3->set("error['last']", 'Last Name is required.');
+    }
+    if (isset($POST['last'])) {
+        $last = $_POST['last'];
+        if (validName($last)) {
+            $_SESSION['last'] = $last;
+        } else {
+            $f3->set("error['last']", 'Last Name is required.');
 
-            }
         }
-
-        if (isset($POST['age'])) {
-            $age = $_POST['age'];
-            if (validAge($age)) {
-                $_SESSION['age'] = $age;
-            } else {
-                $f3->set("error['age']", 'Age is required.');
-            }
+    }
+    if (isset($POST['age'])) {
+        $age = $_POST['age'];
+        if (validAge($age)) {
+            $_SESSION['age'] = $age;
+        } else {
+            $f3->set("error['age']", 'Age is required.');
         }
-
+    }
     if (isset($_POST['gender'])) {
         $gender = $_POST['gender'];
         $_SESSION['gender'] = $gender;
@@ -92,7 +92,6 @@ $f3->route('GET|POST /personal_information', function ($f3) {
     }
     $template = new Template();
     echo $template->render('views/personal_information.html');
-
 });
 
 //summary route

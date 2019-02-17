@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -35,45 +35,67 @@
         <div class="row">
             <div class="col-sm-12">
                 <label class="font-weight-bold">In-door Interests</label>
-                <check if="{{isset(@errors['indoor'])}}">
-                    <p>{{@errors['indoor']}}</p>
-                </check>
+                <div class="container rounded border">
+                    <div class="row form-group p-sm-1">
+                        <div class="col-sm-3 form-group">
+                            <input type="checkbox" name="indoor[]" value="tv"> tv<br/>
+                            <input type="checkbox" name="indoor[]" value="puzzles"> puzzles<br/>
+                        </div>
+                        <div class="col-sm-3 form-group">
+                            <input type="checkbox" name="indoor[]" value="movies"> movies<br/>
+                            <input type="checkbox" name="indoor[]" value="reading"> reading<br/>
+                        </div>
+                        <div class="col-sm-3 form-group">
+                            <input type="checkbox" name="indoor[]" value="cooking"> cooking<br/>
+                            <input type="checkbox" name="indoor[]" value="cards"> playing cards<br/>
+                        </div>
+                        <div class="col-sm-3 form-group">
+                            <input type="checkbox" name="indoor[]" value="board"> board games<br/>
+                            <input type="checkbox" name="indoor[]" value="video"> video games<br/>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="font-weight-bold">Out-door Interests</label>
+                                <check if="{{isset(@errors['outdoor'])}}">
+                                    <p>{{@errors['outdoor']}}</p>
+                                </check>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="font-weight-bold">Out-door Interests</label>
+                                </div>
+                                <div class="row form-group p-sm-1">
+
+                                    <div class="col-sm-3 form-group">
+                                        <input type="checkbox" name="outdoor[]" value="hiking"> hiking<br/>
+                                        <input type="checkbox" name="outdoor[]" value="walking"> walking<br/>
+                                    </div>
+                                    <div class="col-sm-3 form-group ">
+                                        <input type="checkbox" name="outdoor[]" value="biking"> biking<br/>
+                                        <input type="checkbox" name="outdoor[]" value="climbing"> climbing<br/>
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <input type="checkbox" name="outdoor[]" value="swimming"> swimming
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <input type="checkbox" name="outdoor[]" value="collecting"> collecting
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary btn-lg align-content-end">Next>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary btn-lg align-content-end">Next></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="checkbox row form-group p-sm-1" id="indoor" >
-            <repeat group="{{@indoor}}" value="{{indoorActivities}}">
-                <div class="col-sm-3">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" name="indoor[]" value="{{@indoorActivities}}"
-                        <check if="{{in_array(@indoorActivities, @SESSION['indoor'])}}">checked</check>>
-                        {{@indoorActivities}}</label>
-                </div>
-            </repeat>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <label class="font-weight-bold">Out-door Interests</label>
-                <check if="{{isset(@errors['outdoor'])}}">
-                    <p>{{@errors['outdoor']}}</p>
-                </check>
-            </div>
-        </div>
-        <div class="checkbox row form-group p-sm-1" id="outdoor" >
-            <repeat group="{{@outdoor}}" value="{{outdoorActivities}}">
-                <div class="col-sm-3">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" name="outdoor[]" value="{{@outdoorActivities}}"
-                        <check if="{{in_array(@outdoorActivities, @SESSION['outdoor'])}}">checked</check>>
-                        {{@outdoorActivities}}</label>
-                </div>
-            </repeat>
-        </div>
-        <div class="text-right">
-            <button type="submit" class="btn btn-primary btn-lg align-content-end">Next></button>
-        </div>
-
     </form>
+
 </div>
 
 <!--Bootstrap https://v4-alpha.getbootstrap.com/-->
