@@ -12,8 +12,6 @@ error_reporting(E_ALL);
 
 //require autoload
 require_once 'vendor/autoload.php';
-require_once 'classes/member.php';
-require_once 'classes/premiumMember.php';
 
 //session start
 session_start();
