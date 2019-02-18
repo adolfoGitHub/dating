@@ -12,10 +12,7 @@ error_reporting(E_ALL);
 
 //require autoload
 require_once 'vendor/autoload.php';
-//validation
-require 'model/validation.php';
-require 'classes/member.php';
-require_once 'classes/premiumMember.php';
+
 //session start
 session_start();
 
@@ -25,7 +22,8 @@ $f3 = Base::instance();
 //fat-free error reporting
 $f3->set('DEBUG', 3);
 
-
+//validation
+require 'model/validation.php';
 
 //default route
 $f3->route('GET|POST /', function () {
