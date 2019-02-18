@@ -24,6 +24,8 @@ $f3->set('DEBUG', 3);
 
 //validation
 require_once 'model/validation.php';
+require_once 'classes/member.php';
+require_once 'classes/premiumMember.php';
 
 //default route
 $f3->route('GET|POST /', function () {
