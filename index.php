@@ -12,7 +12,8 @@ error_reporting(E_ALL);
 
 //require autoload
 require_once 'vendor/autoload.php';
-
+//validation
+require_once 'model/validation.php';
 //session start
 session_start();
 
@@ -22,8 +23,7 @@ $f3 = Base::instance();
 //fat-free error reporting
 $f3->set('DEBUG', 3);
 
-//validation
-require 'model/validation.php';
+
 
 //default route
 $f3->route('GET|POST /', function () {
@@ -31,30 +31,8 @@ $f3->route('GET|POST /', function () {
     echo $template->render('views/home.html');
 });
 
-$email = '';
-$state = '';
-$seeking = '';
-$bio = '';
-
 $indoor = array('tv', 'puzzles', 'movies', 'reading', 'cooking', 'cards', 'board', 'video');
 $outdoor = array('hiking', 'walking', 'biking', 'climbing', 'swimming', 'collecting');
-
-//session variables
-
-$_SESSION['memberPremium'];
-$_SESSION['indoor'] = $indoor;
-$_SESSION['outdoor'] = $outdoor;
-$_SESSION['first'];
-$_SESSION['last'];
-$_SESSION['age'];
-$_SESSION['gender'];
-$_SESSION['phone'];
-$_SESSION['email'];
-$_SESSION['state'];
-$_SESSION['seeking'];
-$_SESSION['bio'];
-$_SESSION['premium'];
-
 
 //personal info route
 $f3->route('GET|POST /info', function ($f3) {
@@ -106,15 +84,15 @@ $f3->route('GET|POST /info', function ($f3) {
 
     $premium = $_POST['premium'];
 
-    if($premium === true){
+    if ($premium === true) {
         $memberPremium = new PremiumMember($_SESSION['first'], $_SESSION['last'], $_SESSION['age'],
-                        $_SESSION['gender'], $_SESSION['phone']);
+            $_SESSION['gender'], $_SESSION['phone']);
         $_SESSION['memberPremium'] = $memberPremium;
         $f3->reroute('/profile');
 
-    }else{
+    } else {
         $member = new Member($_SESSION['first'], $_SESSION['last'], $_SESSION['age'],
-                            $_SESSION['gender'], $_SESSION['phone']);
+            $_SESSION['gender'], $_SESSION['phone']);
         $_SESSION['member'] = $member;
         $f3->reroute('/profile');
     }
