@@ -5,24 +5,8 @@
 
     Personal Info page for Dating Website.
 -->
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!--CSS Styles-->
-    <link rel="stylesheet" href="../styles/styles.css">
-    <title>Dating Site</title>
-</head>
-<body>
-<header>
-    <h4>My Dating Website</h4>
-</header>
-<br/>
+<!-- Site Head-->
+<include href="views/header.html"></include>
 <!--Personal Info-->
 <div class="container border rounded" id="main">
     <br/>
@@ -32,26 +16,26 @@
         <div class="row">
             <div class="col-md-9 text-left">
                 <label class="font-weight-bold">First Name</label><br/>
-                <input type="text" name="first" id="first" class="form-control" value="{{@POST['first']}}"><br/>
-                <check if="{{isset(@error['first'])}}"><p>{{@error['first']}}</p></check>
+                <input type="text" name="first" id="first" class="form-control" value="{{@first}}"><br/>
+
                 <label class="font-weight-bold">Last Name</label><br/>
-                <input type="text" name="last" id="last" class="form-control" value="{{@last}}"><br/>
-                <check if="{{isset(@error['last'])}}"><p>{{@error['last']}}</p></check>
+                <input type="text" name="last" id="last" class="form-control" value=""><br/>
+
                 <label class="font-weight-bold">Age</label><br>
-                <input type="number" name="age" id="age" class="form-control" value="{{@age}}"><br/>
-                <check if="{{isset(@error['age'])}}"><p>{{@error['age']}}</p></check>
+                <input type="number" name="age" id="age" class="form-control" value=""><br/>
+
                 <label class="font-weight-bold">Gender</label><br/>
                 <input type="radio" name="gender" value="male" value="male" checked>
-                <check if="{{@gender}} == male"></check>&nbsp;Male&nbsp;
+                Male&nbsp;
                 <input type="radio" name="gender" value="female" value="female">
-                <check if="{{gender}} == Female"></check>&nbsp; Female <br/><br/>
-                <check if="{{isset(@error['gender'])}}"><p>{{@error['gender']}}</p></check>
+                &nbsp; Female <br/><br/>
+
                 <label class="font-weight-bold">Phone Number</label><br/>
-                <input type="tel" name="phone" id="phone" class="form-control" value="{{@phone}}"><br/>
-                <check if="{{isset(@error['phone'])}}"><p>{{@error['phone']}}</p></check>
+                <input type="tel" name="phone" id="phone" class="form-control" value=""><br/>
+
                 <div>
                     <span class="font-weight-bold">Premium Membership</span><br/>
-                    <input type="checkbox" name="membership" value="{{@membership}}">&nbsp;&nbsp;Sign me up for
+                    <input type="checkbox" name="premium" id="premium" value="">&nbsp;&nbsp;Sign me up for
                     a Premium Account!</br>
                 </div>
             </div>
@@ -78,15 +62,5 @@
         </div>
     </form>
 </div>
-<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+<!-- Site Footer-->
+<include href="views/footer.html"></include>
