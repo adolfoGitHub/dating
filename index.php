@@ -84,7 +84,7 @@ $f3->route('GET|POST /info', function ($f3) {
 
     $premium = $_POST['premium'];
 
-    if ($premium === true) {
+    if ($premium === 'male' || $premium === 'female') {
         $memberPremium = new PremiumMember($_SESSION['first'], $_SESSION['last'], $_SESSION['age'],
             $_SESSION['gender'], $_SESSION['phone']);
         $_SESSION['memberPremium'] = $memberPremium;
