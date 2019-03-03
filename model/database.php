@@ -55,13 +55,14 @@
 		 * @param $state        string state
 		 * @param $seeking      string seeking
 		 * @param $bio          string biography
-		 * @param $premium      int 1 for premium 0 for non-premium
+		 * @param $premium      int 0 or 1
 		 * @param $interests    string interests
 		 *
-		 * @return bool
+		 * @return void
 		 */
 			function insertMember($fname, $lname, $age, $gender, $phone, $email, $state, $seeking, $bio, $premium,
-			                      $interests) {
+			                      $interests) :void
+			{
 				global $dbh;
 				//connect to database
 				$dbh = $this  -> connect();
@@ -80,19 +81,16 @@
 				$statement -> bindParam(':lname', $lname, PDO::PARAM_STR);
 				$statement -> bindParam(':age', $age, PDO::PARAM_INT);
 				$statement -> bindParam(':gender', $gender, PDO::PARAM_STR);
-				$statement -> bindParam(':phone', $phone, PDO::PARAM_STR);
+				$statement -> bindParam(':phone', $phone, PDO::PARAM_INT);
 				$statement -> bindParam(':email', $email, PDO::PARAM_STR);
 				$statement -> bindParam(':state', $state, PDO::PARAM_STR);
 				$statement -> bindParam(':seeking', $seeking, PDO::PARAM_STR);
 				$statement -> bindParam(':bio', $bio, PDO::PARAM_STR);
-				$statement -> bindParam(':premium', $premium, PDO::PARAM_BOOL);
+				$statement -> bindParam(':premium', $premium, PDO::PARAM_INT);
 				$statement -> bindParam(':interests', $interests, PDO::PARAM_STR);
 				
 				//4. execute the statement
-				$success = $statement -> execute();
-				
-				//5. return the result
-				return $success;
+				$statement -> execute();
 			}
 		
 		/**
@@ -151,7 +149,7 @@
 				//5. return the result
 				$result = $statement -> fetch(PDO::FETCH_ASSOC);
 				
-					return new Member($result['fname'], $result['last'], $result['age'], $result['gender'],
+					return new PremiumMember($result['fname'], $result['last'], $result['age'], $result['gender'],
 						$result['phone'], $result['email'], $result['state'], $result['seeking'], $result['bio'],
 						$result['interests']);
 			}
