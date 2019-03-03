@@ -7,6 +7,12 @@
 */
 
 
+/*CREATE TABLE Members (member_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, fname VARCHAR(15) NOT NULL,
+                        lname VARCHAR(20) NOT NULL, age INT(2), gender CHAR(1), phone INT(10), email VARCHAR(50),
+                        state CHAR(2), seeking CHAR(1), boi BLOB, premium CHAR(1), image VARCHAR(100),
+                        interests BLOB);
+*/
+
 /* VALIDATION FUNCTIONS */
 
 /**
