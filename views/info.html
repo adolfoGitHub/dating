@@ -7,86 +7,127 @@
 -->
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!--CSS Styles-->
-    <link href="styles/styles.css" rel="stylesheet">
-    <title>Dating Site</title>
-</head>
-<body>
-<header>
-    <h4>My Dating Website</h4>
-</header>
-<br/>
-<!--Personal Info-->
-<div class="container border rounded" id="main">
-    <br/>
-    <h1>Personal Information</h1>
-    <hr>
-    <form action="#" method="post" class="form-horizontal">
-        <div class="row">
-            <div class="col-md-9 text-left">
-                <label class="font-weight-bold">First Name</label><br/>
-                <input type="text" name="first" id="first" class="form-control" value="{{@first}}"><br/>
-
-                <label class="font-weight-bold">Last Name</label><br/>
-                <input type="text" name="last" id="last" class="form-control" value=""><br/>
-
-                <label class="font-weight-bold">Age</label><br>
-                <input type="number" name="age" id="age" class="form-control" value=""><br/>
-
-                <label class="font-weight-bold">Gender</label><br/>
-                <input type="radio" name="gender" value="male" value="male" checked>
-                Male&nbsp;
-                <input type="radio" name="gender" value="female" value="female">
-                &nbsp; Female <br/><br/>
-
-                <label class="font-weight-bold">Phone Number</label><br/>
-                <input type="tel" name="phone" id="phone" class="form-control" value=""><br/>
-
-                <div>
-                    <span class="font-weight-bold">Premium Membership</span><br/>
-                    <input type="checkbox" name="premium" id="premium" value="">&nbsp;&nbsp;Sign me up for
-                    a Premium Account!</br>
-                </div>
-            </div>
-            <!--Disclaimer-->
-            <div class="col-md-3 text-center">
-                <br/>
-                <div class="container rounded border m-3" id="note">
-                    <p><span class="font-weight-bold ">Note:</span> All information entered is protected by
-                        our privacy policy. Profile information
-                        can only be viewed by others with your permission.
-                    </p>
-                </div>
-                <br/>
-
-
-            </div>
-        </div>
-
-        <!--Button-->
-        <div class="text-right">
-            <div class="align-bottom">
-                <button type="submit" class="btn btn-primary btn-lg">Next></button>
-            </div>
-        </div>
-    </form>
-</div>
-<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap CSS-->
+		<link rel="stylesheet"
+				href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+				integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+				crossorigin="anonymous">
+		<!--CSS Styles-->
+		<link href="styles/styles.css" rel="stylesheet">
+		<title>Dating Site</title>
+	</head>
+	<!-- NAV-BAR -->
+	<div class="d-flex " id="navHeader">
+		<div class="p-2">My Dating Website</div>
+		<div class="ml-auto p-2">
+			<a href="admin">
+				<button class="btn btn-primary">admin</button>
+			</a>
+		</div>
+	</div>
+	<!--Personal Info-->
+	<div class="container border rounded" id="main">
+		<br>
+		<h1>Personal Information</h1>
+		<hr>
+		<form action="info" method="post" class="form-horizontal">
+			<div class="row">
+				<div class="col-md-9 text-left">
+					<label class="font-weight-bold">First Name:</label>
+					<br>
+					<check if="{{isset(@errors['fname'])}}">
+						<p>{{@errors['fname']}}</p>
+					</check>
+					<input type="text" name="fname" id="fname" class="form-control"
+							value="{{@SESSION.fname}}">
+					<br>
+					<label class="font-weight-bold">Last Name:</label>
+					<br>
+					<check if="{{isset(@errors['lname'])}}">
+						<p>{{@errors['lname']}}</p>
+					</check>
+					<input type="text" name="lname" id="lname" class="form-control"
+							value="{{@SESSION.lname}}">
+					<br>
+					<label class="font-weight-bold">Age</label>
+					<br>
+					<check if="{{isset(@errors['age'])}}">
+						<p>{{@errors['age']}}</p>
+					</check>
+					<input type="number" name="age" id="age" class="form-control"
+							value="{{@SESSION.age}}">
+					<br>
+					<label class="font-weight-bold">Gender</label>
+					<br>
+					<input type="radio" name="gender" value="male" value="male"
+					<check if="{{@SESSION.gender}} == male">
+						checked
+					</check>
+					>
+					Male&nbsp;
+					<input type="radio" name="gender" value="female" value="female"
+					<check if="{{@SESSION.gender}} == female">
+						checked
+					</check>
+					>
+					&nbsp; Female
+					<br>
+					<br>
+					<label class="font-weight-bold">Phone Number</label>
+					<br>
+					<check if="{{isset(@errors['phone'])}}">
+						<p>{{@errors['phone']}}</p>
+					</check>
+					<input type="tel" name="phone" id="phone" class="form-control"
+							value="{{@SESSION.phone}}">
+					<br>
+					<div>
+						<span class="font-weight-bold">Premium Membership</span>
+						<br />
+						<input type="checkbox" name="premium" id="premium"
+								value="{{@SESSION.phone}}">
+						<check if="{{isset(@SESSION.premium)}}">
+							checked
+						</check>
+						&nbsp;&nbsp;Sign me up for a Premium Account!</br>
+					</div>
+				</div>
+				<!--Disclaimer-->
+				<div class="col-md-3 text-center">
+					<br>
+					<div class="container rounded border m-3" id="note">
+						<p>
+							<span class="font-weight-bold ">Note:</span>
+							All information entered is
+							protected by
+							our privacy policy. Profile information
+							can only be viewed by others with your permission.
+						</p>
+					</div>
+					<br>
+				</div>
+			</div>
+			<!--Button-->
+			<div class="text-right">
+				<div class="align-bottom">
+					<button type="submit" class="btn btn-primary btn-lg">Next></button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+			integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+			integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+			crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+			integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+			crossorigin="anonymous"></script>
+	</body>
 </html>

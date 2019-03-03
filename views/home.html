@@ -8,73 +8,91 @@
 
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!--CSS Styles-->
-    <link href="styles/styles.css" rel="stylesheet">
-    <title>Dating Site</title>
-</head>
-<body>
-<header>
-    <h4>My Dating Website</h4>
-</header>
-<br/>
-<!-- This is the main container for the body -->
-<div class="container rounded border" id="main">
-    <div class="row ">
-        <div class="col-md-6">
-            <div class="text-center">
-                <h1>My Dating Website</h1>
-            </div>
-            <p>
-                Welcome to the web's most successful dating website. At <strong>My Dating
-                Website</strong> you will meet other like minded individuals. We have the
-                highest success rate of couples on the web. User's are matched by
-                interest and location. Find out why so many others have found love on
-                our site!
-            </p>
-            <div class="text-center font-weight-bold">
-                <h5>Hear what our users are saying about us.</h5>
-            </div>
-            <hr>
-            <!-- Testimonials -->
-            <p><em>"I met the love of my life after only a month!" -Andrea</em></p>
-            <p><em>It was so easy to set up a profile and start meeting people.
-                I didn't realize how many others were looking for love in my
-                area." -John Smith</em>
-            </p>
-            <p><em>"Just try it! You'll never be the same!" -Sarah</em></p>
-            <hr>
-            <!-- Button -->
-            <div class="container text-center p-4">
-                <form method="post" action="info" class="horizontal">
-                    <button type="submit" class="btn btn-primary btn-lg">
-                        Create a Profile!
-                    </button>
-                </form>
-            </div>
-        </div>
-        <!-- image column -->
-        <div class="col-md-6">
-            <img src="images/couple.jpg" alt="picture of a young man and woman couple"
-                 class="img-fluid rounded border center"><br/><br/>
-        </div>
-    </div>
-</div>
-<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap CSS-->
+		<link rel="stylesheet"
+				href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+				integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+				crossorigin="anonymous">
+		<!--CSS Styles-->
+		<link href="styles/styles.css" rel="stylesheet">
+		<title>Dating Site</title>
+	</head>
+	<body>
+		<!-- NAV-BAR -->
+		<div class="d-flex " id="navHeader">
+			<div class="p-2">My Dating Website</div>
+			<div class="ml-auto p-2">
+				<a href="admin">
+					<button class="btn btn-primary">admin</button>
+				</a>
+			</div>
+		</div>
+		<!-- This is the main container for the body -->
+		<div class="container rounded border " id="main">
+			<div class="row ">
+				<div class="col-md-6">
+					<div class="text-center">
+						<h1>My Dating Website</h1>
+					</div>
+					<p>
+						Welcome to the web's most successful dating website. At
+						<strong>My Dating
+							Website
+						</strong>
+						you will meet other like minded individuals. We have the
+						highest success rate of couples on the web. User's are matched by
+						interest and location. Find out why so many others have found love on
+						our site!
+					</p>
+					<div class="text-center font-weight-bold">
+						<h5>Hear what our users are saying about us.</h5>
+					</div>
+					<hr>
+					<!-- Testimonials -->
+					<p>
+						<em>"I met the love of my life after only a month!" -Andrea</em>
+					</p>
+					<p>
+						<em>It was so easy to set up a profile and start meeting people.
+							I didn't realize how many others were looking for love in my
+							area." -John Smith
+						</em>
+					</p>
+					<p>
+						<em>"Just try it! You'll never be the same!" -Sarah</em>
+					</p>
+					<hr>
+					<!-- Button -->
+					<div class="container text-center p-4">
+						<form method="post" action="info" class="horizontal">
+							<button type="submit" class="btn btn-primary btn-lg">
+								Create a Profile!
+							</button>
+						</form>
+					</div>
+				</div>
+				<!-- image column -->
+				<div class="col-md-6">
+					<img src="images/couple.jpg" alt="picture of a young man and woman couple"
+							class="img-fluid rounded border center">
+					<br />
+					<br />
+				</div>
+			</div>
+		</div>
+		<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+				integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+				crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+				integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+				crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+				integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+				crossorigin="anonymous"></script>
+	</body>
 </html>

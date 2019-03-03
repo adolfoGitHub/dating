@@ -7,82 +7,105 @@
 -->
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!--CSS Styles-->
-    <link href="../styles/styles.css" rel="stylesheet">
-    <title>Dating Site</title>
-</head>
-<body>
-<header>
-    <h4>My Dating Website</h4>
-</header>
-<br/>
-<div class="container-fluid rounded border" id="main">
-    <div class="row">
-        <div class="col-sm-6">
-            <table class="table" id="infoTable">
-                <tr>
-                    <td>Name: </td>
-                </tr>
-                <tr>
-                    <td>Gender: </td>
-                </tr>
-
-                <tr>
-                    <td>Age: </td>
-                </tr>
-
-                <tr>
-                    <td>Phone: </td>
-                </tr>
-
-                <tr>
-                    <td>Email: </td>
-                </tr>
-
-                <tr>
-                    <td>State: </td>
-                </tr>
-
-                <tr>
-                    <td>Seeking: </td>
-                </tr>
-
-                <tr>
-                    <td>Interests: </td>
-                </tr>
-            </table>
-        </div>
-        <div class="col-sm-6 text-center">
-            <img src="../images/person_avatar.png" alt="profile of a person" class="img-fluid rounded border"/>
-            <h4 class="text-left pt-3 pl-4">Biography</h4>
-            <p></p>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="container text-center p-4">
-            <a class="button btn-primary btn-lg" href="">
-                Contact Me!
-            </a>
-        </div>
-    </div>
-</div>
-<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap CSS-->
+		<link rel="stylesheet"
+				href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+				integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+				crossorigin="anonymous">
+		<!--CSS Styles-->
+		<link href="../styles/styles.css" rel="stylesheet">
+		<title>Dating Site</title>
+	</head>
+	<body>
+		<!-- NAV-BAR -->
+		<div class="d-flex " id="navHeader">
+			<div class="p-2">My Dating Website</div>
+			<div class="ml-auto p-2">
+				<a href="admin">
+					<button class="btn btn-primary">admin</button>
+				</a>
+			</div>
+		</div>
+		<div class="container-fluid rounded border" id="main">
+			<div class="row">
+				<div class="col-sm-6">
+					<table class="table" id="infoTable">
+						<tr>
+							<td>Name: {{@SESSION['member']->getFname()}}
+								{{@SESSION['member']->getLname()}}
+							</td>
+						</tr>
+						<tr>
+							<td>Gender: {{@SESSION['member']->getAge()}}</td>
+						</tr>
+						
+						<tr>
+							<td>Age: {{@SESSION['member']->getAge()}}</td>
+						</tr>
+						
+						<tr>
+							<td>Phone: {{@SESSION['member']->getPhone()}}</td>
+						</tr>
+						
+						<tr>
+							<td>Email: {{@SESSION['member']->getEmail()}}</td>
+						</tr>
+						
+						<tr>
+							<td>State: {{@SESSION['member']->getState()}}</td>
+						</tr>
+						
+						<tr>
+							<td>Seeking: {{@SESSION['member']->getSeeking()}}</td>
+						</tr>
+						
+						<tr>
+							<check if="{{get_class($_SESSION['member']) == 'PremiumMember'}}">
+								
+								<td>Interests:
+									<repeat group="{{@SESSION['member']->getOutdoorInterests()}}"
+											value="{{@outdoors}}">
+										{{@outdoors}}
+									</repeat>
+									
+									<repeat group="{{@SESSION['member']->getIndoorInterests()}}"
+											value="{{@indoors}}">
+										{{@indoors}}
+									</repeat>
+								</td>
+							</check>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-6 text-center">
+					<img src="../images/person_avatar.png" alt="profile of a person"
+							class="img-fluid rounded border" />
+					<h4 class="text-left pt-3 pl-4">Biography</h4>
+					<p>{{@SESSION['member']->getBio}}</p>
+				
+				</div>
+			</div>
+			<div class="row">
+				<div class="container text-center p-4">
+					<a class="button btn-primary btn-lg" href="">
+						Contact Me!
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--Bootstrap https://v4-alpha.getbootstrap.com/-->
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+				integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+				crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+				integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+				crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+				integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+				crossorigin="anonymous"></script>
+	</body>
 </html>
